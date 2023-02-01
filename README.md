@@ -16,3 +16,5 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
+
+Go to the following link after `http://localhost:3000/Day1`
