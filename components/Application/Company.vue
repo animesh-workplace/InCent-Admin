@@ -6,7 +6,7 @@
 				<span class="design--text font-weight-medium text-h6 white">Company Details</span>
 			</div>
 			<div class="mt-8">
-				<div class="d-flex flex-row">
+				<div class="d-flex flex-row flex-sm-wrap">
 					<div class="mr-8">
 						<div class="d-flex flex-row">
 							<div class="mr-5">
