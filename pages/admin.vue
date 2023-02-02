@@ -37,9 +37,44 @@
 									{{ item.date }} <br />
 									{{ item.time }}
 								</td>
-								<td>{{ item.status }}</td>
-								<td>{{ item.comment }}</td>
-								<td>button</td>
+								<td>
+									<div v-if="item.status == 'Approved'">
+										<v-icon color="grey" small>mdi-server</v-icon>
+										<span class="success--text text-caption font-weight-light">{{
+											item.status
+										}}</span>
+									</div>
+									<div v-if="item.status == 'Pending'">
+										<v-icon color="grey" small>mdi-server</v-icon>
+										<span class="grey--text text-caption font-weight-light">{{
+											item.status
+										}}</span>
+									</div>
+									<div v-if="item.status == 'Rejected'">
+										<v-icon color="grey" small>mdi-server</v-icon>
+										<span class="error--text text-caption font-weight-light">{{
+											item.status
+										}}</span>
+									</div>
+								</td>
+								<td>
+									<div class="text-center">
+										<h6>NA</h6>
+										<h6>(Not applicable)</h6>
+									</div>
+								</td>
+								<td>
+									<v-btn
+										block
+										small
+										color="design"
+										class="text-caption text-capitalize"
+										@click="ChangePage(item.link)"
+									>
+										<span class="mr-2">View Application</span>
+										<v-icon color="grey" small>mdi-eye-circle</v-icon>
+									</v-btn>
+								</td>
 							</tr>
 						</tbody>
 					</template>
@@ -59,7 +94,7 @@ export default {
 				date: '16/2/23',
 				time: '4:14am',
 				status: 'Approved',
-				comment: 'NA',
+				comment: '',
 				link: '',
 			},
 			{
@@ -68,7 +103,7 @@ export default {
 				date: '16/2/23',
 				time: '4:14am',
 				status: 'Pending',
-				comment: 'NA',
+				comment: '',
 				link: '',
 			},
 			{
@@ -77,13 +112,17 @@ export default {
 				date: '16/2/23',
 				time: '4:14am',
 				status: 'Rejected',
-				comment: 'NA',
+				comment: '',
 				link: '',
 			},
 		],
 	}),
 	components: {},
-	methods: {},
+	methods: {
+		ChangePage(link) {
+			this.$router.push('/company/a')
+		},
+	},
 	mounted() {
 		this.$nextTick(() => {})
 	},
