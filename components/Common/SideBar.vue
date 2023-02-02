@@ -1,7 +1,7 @@
 <template>
-	<v-navigation-drawer clipped fixed app class="elevation-4" color="design">
+	<v-navigation-drawer clipped fixed app class="elevation-4" color="design" v-model="visible">
 		<div class="d-flex justify-end">
-			<v-btn icon right color="white">
+			<v-btn icon right color="white" @click="HideNav">
 				<v-icon>mdi-chevron-double-left</v-icon>
 			</v-btn>
 		</div>
