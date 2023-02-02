@@ -23,7 +23,7 @@
 						<tbody>
 							<tr
 								:class="index % 2 ? 'grey lighten-3' : 'white'"
-								v-for="(item, index) in desserts"
+								v-for="(item, index) in items"
 								:key="item.name"
 							>
 								<td>{{ index + 1 }}</td>
@@ -44,7 +44,7 @@
 <script>
 export default {
 	data: () => ({
-		desserts: [
+		items: [
 			{
 				name: 'Vedant Parte',
 				designation: 'IT',
