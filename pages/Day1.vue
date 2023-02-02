@@ -2,7 +2,7 @@
 	<div>
 		<CommonBreadCrumb />
 		<ApplicationHeader />
-		<ApplicationCompany />
+		<!-- 		<ApplicationCompany />
 		<ApplicationUsers />
 		<v-sheet class="pa-8 mt-4">
 			<v-container class="text-center">
@@ -13,7 +13,7 @@
 					<span class="text-body-2">Reject with comment</span>
 				</v-btn>
 			</v-container>
-		</v-sheet>
+		</v-sheet> -->
 	</div>
 </template>
 
