@@ -1,7 +1,7 @@
 <template>
 	<v-app>
-		<CommonSideBar />
-		<CommonHeader />
+		<CommonSideBar v-model="navbar_visbile" />
+		<CommonHeader v-model="navbar_visbile" />
 		<v-main>
 			<Nuxt />
 		</v-main>
@@ -11,7 +11,9 @@
 
 <script>
 export default {
-	data: () => ({}),
+	data: () => ({
+		navbar_visbile: false,
+	}),
 	components: {},
 	methods: {},
 	mounted() {
