@@ -22,4 +22,4 @@ $ yarn generate
 $ npm run generate
 ```
 
-Go to the following link after `http://localhost:3000/Day1`
+Go to the following link after `http://localhost:3000/`
