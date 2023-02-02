@@ -22,9 +22,9 @@
 						</thead>
 						<tbody>
 							<tr
-								:class="index % 2 ? 'grey lighten-3' : 'white'"
+								:key="index"
 								v-for="(item, index) in items"
-								:key="item.name"
+								:class="index % 2 ? 'grey lighten-3' : 'white'"
 							>
 								<td>{{ index + 1 }}</td>
 								<td>{{ item.name }}</td>
