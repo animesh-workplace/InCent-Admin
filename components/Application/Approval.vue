@@ -9,15 +9,12 @@
 				<span class="text-body-2">Reject with comment</span>
 			</v-btn>
 
-			<v-dialog v-model="dialog1" width="600">
-				<v-card class="pa-4">
-					<v-card-title class="text-center">
-						<div class="d-flex justify-space-between">
-							<div class="text-h6 text-center">Do you really want to approve the application?</div>
-						</div>
-					</v-card-title>
-
-					<v-card-text class="text-center"> You are going to approve a company application </v-card-text>
+			<v-dialog v-model="dialog1" width="550">
+				<v-card class="pt-10 pb-4 px-4">
+					<v-card-text class="text-center">
+						<div class="text-h6 text-center mb-4">Do you really want to approve the application?</div>
+						You are going to approve a company application
+					</v-card-text>
 
 					<v-card-actions>
 						<div class="mx-auto">
