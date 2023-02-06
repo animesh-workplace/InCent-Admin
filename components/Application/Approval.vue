@@ -9,11 +9,11 @@
 				<span class="text-body-2">Reject with comment</span>
 			</v-btn>
 
-			<v-dialog v-model="dialog1" width="500">
-				<v-card>
-					<v-card-title>
+			<v-dialog v-model="dialog1" width="600">
+				<v-card class="pa-4">
+					<v-card-title class="text-center">
 						<div class="d-flex justify-space-between">
-							<div class="text-h6">Do you really want to approve the application?</div>
+							<div class="text-h6 text-center">Do you really want to approve the application?</div>
 						</div>
 					</v-card-title>
 
@@ -28,8 +28,8 @@
 				</v-card>
 			</v-dialog>
 
-			<v-dialog v-model="dialog2" width="500">
-				<v-card>
+			<v-dialog v-model="dialog2" width="600">
+				<v-card class="pa-4">
 					<v-card-title>
 						<div class="d-flex justify-space-between">
 							<div class="text-h6">Do you really want to Reject the Application ?</div>
