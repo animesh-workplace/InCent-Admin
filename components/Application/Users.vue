@@ -1,9 +1,11 @@
 <template>
 	<v-container class="mt-8">
-		<v-sheet outlined class="py-4 px-6 rounded-lg">
+		<v-sheet outlined class="py-4 px-6 rounded-lg thick-outline">
 			<div class="d-flex align-center mt-n8 ml-8">
-				<v-icon class="design--text mr-1">mdi-account</v-icon>
-				<span class="design--text font-weight-medium text-h6 white">Users</span>
+				<div class="white">
+					<v-icon class="design--text mr-1 mb-1">mdi-account</v-icon>
+					<span class="design--text font-weight-medium text-h6 white">Users</span>
+				</div>
 			</div>
 			<div class="mt-8">
 				<h4 class="grey--text font-weight-regular pl-10">4 Users added</h4>
@@ -83,4 +85,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.thick-outline {
+	border: solid 1.5px;
+}
+</style>
