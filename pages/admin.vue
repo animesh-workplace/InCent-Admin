@@ -45,22 +45,52 @@
 								</td>
 								<td>
 									<div v-if="item.status == 'Approved'">
-										<v-icon color="grey" small>mdi-server</v-icon>
-										<span class="success--text text-caption font-weight-light">{{
-											item.status
-										}}</span>
+										<div class="d-flex">
+											<img
+												width="22"
+												height="22"
+												alt="Sucess"
+												class="mr-3"
+												src="@/assets/icon_success.png"
+											/>
+											<div>
+												<span class="success--text text-caption font-weight-light">
+													{{ item.status }}
+												</span>
+											</div>
+										</div>
 									</div>
 									<div v-if="item.status == 'Pending'">
-										<v-icon color="grey" small>mdi-server</v-icon>
-										<span class="grey--text text-caption font-weight-light">{{
-											item.status
-										}}</span>
+										<div class="d-flex">
+											<img
+												width="22"
+												height="22"
+												alt="Sucess"
+												class="mr-3"
+												src="@/assets/icon_pending.png"
+											/>
+											<div>
+												<span class="grey--text text-caption font-weight-light">
+													{{ item.status }}
+												</span>
+											</div>
+										</div>
 									</div>
 									<div v-if="item.status == 'Rejected'">
-										<v-icon color="grey" small>mdi-server</v-icon>
-										<span class="error--text text-caption font-weight-light">
-											{{ item.status }}
-										</span>
+										<div class="d-flex">
+											<img
+												width="22"
+												height="22"
+												alt="Sucess"
+												class="mr-3"
+												src="@/assets/icon_reject.png"
+											/>
+											<div>
+												<span class="error--text text-caption font-weight-light">
+													{{ item.status }}
+												</span>
+											</div>
+										</div>
 									</div>
 								</td>
 								<td>
@@ -78,7 +108,13 @@
 										@click="ChangePage(item.link)"
 									>
 										<span class="mr-2 white--text">View Application</span>
-										<v-icon color="grey" small>mdi-eye-circle</v-icon>
+										<img
+											width="20"
+											height="20"
+											alt="Sucess"
+											class="mt-1"
+											src="@/assets/eye_icon.png"
+										/>
 									</v-btn>
 								</td>
 							</tr>
