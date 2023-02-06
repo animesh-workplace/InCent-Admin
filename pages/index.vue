@@ -1,8 +1,16 @@
 <template>
-	<v-sheet>
+	<v-sheet class="margin-high mx-auto rounded-lg" elevation="4">
 		<v-container>
-			<v-file-input class="d-block" placeholder="Im label" prepend-icon="mdi-file-pdf-box"></v-file-input>
-			<!-- <v-file-input chips prepend-icon="" prepend-inner-icon="" placeholder="Im label"></v-file-input> -->
+			<v-row>
+				<v-col align-self="center">
+					<img src="@/assets/hero.png" alt="Hero" />
+				</v-col>
+				<v-col>
+					<v-text-field outlined persistent-hint label="Mobile No./ Email"></v-text-field>
+					<v-text-field outlined persistent-hint label="Password" hide-details></v-text-field>
+					<v-btn rounded color="design" dark class="mt-4"> Login </v-btn>
+				</v-col>
+			</v-row>
 		</v-container>
 	</v-sheet>
 </template>
@@ -13,13 +21,17 @@ export default {
 	layout: 'login',
 	components: {},
 	methods: {},
-	beforeMount() {
-		// this.$router.push('/admin')
-	},
+	beforeMount() {},
 	mounted() {
-		this.$nextTick(() => {})
+		this.$nextTick(() => {
+			// this.$auth.loginWith('http://15.206.222.49:3000/incentUser/loginIncentUser')
+		})
 	},
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.margin-high {
+	margin-top: 100px;
+}
+</style>
