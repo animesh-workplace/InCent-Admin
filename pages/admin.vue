@@ -1,11 +1,17 @@
 <template>
 	<v-container class="mt-8">
 		<v-sheet class="py-4 px-6">
-			<div class="text-left">
+			<div class="text-left mb-6">
 				<h2 class="text-h5 design--text mb-4">Company Application</h2>
 				<h3 class="caption">
 					These page can be used by Invecent support team to check company application status
 				</h3>
+			</div>
+
+			<div class="high-margin">
+				<v-text-field class="search py-2 pl-6" hide-details placeholder="Search Application">
+					<v-icon slot="prepend" color="design" class="mt-0"> mdi-magnify </v-icon>
+				</v-text-field>
 			</div>
 
 			<div class="mt-8">
@@ -52,15 +58,15 @@
 									</div>
 									<div v-if="item.status == 'Rejected'">
 										<v-icon color="grey" small>mdi-server</v-icon>
-										<span class="error--text text-caption font-weight-light">{{
-											item.status
-										}}</span>
+										<span class="error--text text-caption font-weight-light">
+											{{ item.status }}
+										</span>
 									</div>
 								</td>
 								<td>
 									<div class="text-center">
-										<h6>NA</h6>
-										<h6>(Not applicable)</h6>
+										<h6 class="grey--text font-weight-regular text-subtitle-2">NA</h6>
+										<h6 class="grey--text font-weight-regular">(Not applicable)</h6>
 									</div>
 								</td>
 								<td>
@@ -71,7 +77,7 @@
 										class="text-caption text-capitalize"
 										@click="ChangePage(item.link)"
 									>
-										<span class="mr-2">View Application</span>
+										<span class="mr-2 white--text">View Application</span>
 										<v-icon color="grey" small>mdi-eye-circle</v-icon>
 									</v-btn>
 								</td>
@@ -129,4 +135,13 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.search {
+	border: 1px solid #9a9a9a;
+	border-radius: 46px;
+}
+.high-margin {
+	margin-left: 84px;
+	margin-right: 84px;
+}
+</style>
