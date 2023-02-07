@@ -14,12 +14,7 @@
 						v-model="payload.user_id"
 						:rules="[rules.required, rules.phoneemail]"
 						placeholder="Enter your own Mobile No./ Email"
-					>
-						<template #prepend v-if="show_countrycode">
-							<!-- <div class="border-cc pa-2">+91</div> -->
-							<div class="text-subtitle grey--text">+91</div>
-						</template>
-					</v-text-field>
+					/>
 					<span class="text-label text-h6">Password</span>
 					<v-text-field
 						outlined
@@ -47,13 +42,12 @@ export default {
 			user_id: '',
 			password: '',
 		},
-		show_countrycode: false,
 		show_password: false,
 		rules: {
 			required: (value) => !!value || 'Required.',
 			phoneemail: (input) => {
-				if (/^\d+$/.test(input)) {
-					return input.length >= 10 || 'Min 10 characters'
+				if (/^\+\d+$/.test(input)) {
+					return input.length >= 13 || 'Min 10 characters'
 				} else {
 					return (
 						/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(input) ||
@@ -64,19 +58,16 @@ export default {
 		},
 	}),
 	layout: 'login',
+	components: {},
 	methods: {
 		// This function handles the input and checks whether the input is digit or not and then adds or removes +91
 		FixingInput(event) {
 			if (/^\d+$/.test(event)) {
-				if (!this.show_countrycode) {
-					this.show_countrycode = true
+				if (!/^\+91/.test(event)) {
+					this.payload.user_id = `+91${event}`
 				}
-				// if (!/^\+91/.test(event)) {
-				// 	this.payload.user_id = `+91${event}`
-				// }
 			} else {
-				this.show_countrycode = false
-				// this.payload.user_id = event.replace('+91', '')
+				this.payload.user_id = event.replace('+91', '')
 			}
 		},
 	},
@@ -101,10 +92,5 @@ export default {
 	font-weight: 400;
 	line-height: 17px;
 	font-style: normal;
-}
-.border-cc {
-	border-style: solid;
-	border-color: red;
-	/*	border-bottom: 1px;*/
 }
 </style>
