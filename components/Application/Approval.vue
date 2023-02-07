@@ -38,7 +38,7 @@
 							<h2 class="text-subtitle-1 font-weight-medium design--text">Add comment</h2>
 							<h3 class="caption">User will be able to make corrections accordingly</h3>
 						</div>
-						<v-text-field v-model="comment" :counter="300" label="add your comment"></v-text-field>
+						<v-text-field v-model="comment" :counter="500" label="add your comment"></v-text-field>
 					</v-card-text>
 
 					<v-card-actions>
