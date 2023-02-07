@@ -1,8 +1,8 @@
 <template>
 	<v-app>
 		<CommonSideBar v-model="navbar_visbile" />
-		<!-- <CommonHeader v-model="navbar_visbile" /> -->
-		<v-main>
+		<CommonHeader v-model="navbar_visbile" />
+		<v-main class="pt-1 mt-n8">
 			<Nuxt />
 		</v-main>
 		<CommonFooter />
