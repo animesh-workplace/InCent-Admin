@@ -2,6 +2,7 @@
 	<v-app>
 		<CommonHeader login />
 		<Nuxt />
+		<CommonFooter />
 	</v-app>
 </template>
 
