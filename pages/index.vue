@@ -45,8 +45,8 @@ export default {
 		rules: {
 			required: (value) => !!value || 'Required.',
 			phoneemail: (input) => {
-				if (/^\d+$/.test(input)) {
-					return input.length >= 10 || 'Min 10 characters'
+				if (/^\+\d+$/.test(input)) {
+					return input.length >= 13 || 'Min 10 characters'
 				} else {
 					return (
 						/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(input) ||
