@@ -18,7 +18,7 @@
 
 					<v-card-actions>
 						<div class="mx-auto">
-							<v-btn class="mr-3" color="primary" outlined @click="dialog1 = false">Cancel</v-btn>
+							<v-btn class="mr-3" color="grey" outlined @click="dialog1 = false">Cancel</v-btn>
 							<v-btn class="mr-3" color="success" @click="dialog1 = false">Approve</v-btn>
 						</div>
 					</v-card-actions>
@@ -43,7 +43,7 @@
 
 					<v-card-actions>
 						<div class="mx-auto">
-							<v-btn class="mr-3" color="primary" outlined @click="dialog2 = false">Cancel</v-btn>
+							<v-btn class="mr-3" color="grey" outlined @click="dialog2 = false">Cancel</v-btn>
 							<v-btn class="mr-3" color="error" @click="dialog2 = false">Reject</v-btn>
 						</div>
 					</v-card-actions>
