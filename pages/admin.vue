@@ -1,5 +1,5 @@
 <template>
-	<v-container class="mt-8">
+	<v-container>
 		<v-sheet class="py-4 px-6">
 			<div class="text-left mb-6">
 				<h2 class="text-h5 design--text mb-4">Company Application</h2>
