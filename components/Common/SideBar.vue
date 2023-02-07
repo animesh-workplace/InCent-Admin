@@ -19,9 +19,9 @@
 			</v-list>
 		</v-navigation-drawer>
 
-		<!-- 		<v-btn icon right color="red" class="float-right mt-16">
+		<v-btn icon right color="design" class="is-fixed" @click="HideNav">
 			<v-icon>mdi-chevron-double-right</v-icon>
-		</v-btn> -->
+		</v-btn>
 	</div>
 </template>
 
@@ -58,4 +58,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.is-fixed {
+	z-index: 2;
+	margin-top: 4rem;
+}
+</style>
