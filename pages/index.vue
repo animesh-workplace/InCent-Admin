@@ -11,7 +11,7 @@
 						outlined
 						class="mt-2"
 						v-model="payload.user_id"
-						:rules="[rules.required, rules.min]"
+						:rules="[rules.required, rules.phoneemail]"
 						placeholder="Enter your own Mobile No./ Email"
 					/>
 					<span class="text-label text-h6">Password</span>
@@ -44,16 +44,14 @@ export default {
 		show_password: false,
 		rules: {
 			required: (value) => !!value || 'Required.',
-			min: (v) => v.length >= 10 || 'Min 10 characters',
-			email: (v) => /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(v) || 'Please enter correct mail',
 			phoneemail: (input) => {
-				const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
-				const phoneRegex = /^\d{10}$/
-
-				if (!emailRegex.test(input)) {
-					return 'invalid email'
-				} else if (!phoneRegex.test(input)) {
-					return 'invalid phone number'
+				if (/^\d+$/.test(input)) {
+					return input.length >= 10 || 'Min 10 characters'
+				} else {
+					return (
+						/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(input) ||
+						'Please enter correct mail'
+					)
 				}
 			},
 		},
