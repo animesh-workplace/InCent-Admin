@@ -6,3 +6,8 @@ html {
 .v-input__slot::after {
 	border-style: none !important;
 }
+
+.v-text-field--outlined fieldset {
+	border: 1px solid #cbcbcb !important;
+	border-radius: 3px !important;
+}
