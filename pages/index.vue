@@ -58,7 +58,6 @@ export default {
 		},
 	}),
 	layout: 'login',
-	components: {},
 	methods: {
 		// This function handles the input and checks whether the input is digit or not and then adds or removes +91
 		FixingInput(event) {
@@ -70,10 +69,6 @@ export default {
 				this.payload.user_id = event.replace('+91', '')
 			}
 		},
-	},
-	beforeMount() {},
-	mounted() {
-		this.$nextTick(() => {})
 	},
 }
 </script>
