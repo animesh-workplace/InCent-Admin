@@ -9,12 +9,25 @@
 			</div>
 
 			<v-list>
-				<v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact class="white--text">
+				<v-list-item
+					exact
+					router
+					:key="i"
+					:to="item.to"
+					class="white--text"
+					v-for="(item, i) in items"
+					:class="item.title == 'Company Applications' ? 'white' : ''"
+				>
 					<v-list-item-action>
-						<v-icon color="white">{{ item.icon }}</v-icon>
+						<v-icon :color="item.title == 'Company Applications' ? 'design' : 'white'">
+							{{ item.icon }}
+						</v-icon>
 					</v-list-item-action>
 					<v-list-item-content>
-						<v-list-item-title v-text="item.title" />
+						<v-list-item-title
+							v-text="item.title"
+							:class="item.title == 'Company Applications' ? 'design--text' : 'white--text'"
+						/>
 					</v-list-item-content>
 				</v-list-item>
 			</v-list>
