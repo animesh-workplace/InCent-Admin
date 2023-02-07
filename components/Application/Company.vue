@@ -25,8 +25,32 @@
 						</div>
 					</div>
 
-					<div class="align-self-center">
-						<div class="d-flex flex-row">
+					<div class="align-self-center ml-5">
+						<table>
+							<tr v-for="(item, index) in other_items" :key="index">
+								<td>
+									<h3 class="company-title">{{ item.title }}</h3>
+								</td>
+								<td>
+									<h3 class="company-subtitle mr-3">
+										{{ item.subtitle }}
+									</h3>
+								</td>
+								<td>
+									<div class="d-flex flex-column justify-center">
+										<img
+											width="20"
+											alt="Sucess"
+											class="mx-auto mb-2"
+											src="@/assets/pdf_icon.png"
+										/>
+										<span class="company-link"> Company-tan.pdf</span>
+									</div>
+								</td>
+							</tr>
+						</table>
+
+						<!-- 						<div class="d-flex flex-row">
 							<div class="mr-5">
 								<div v-for="(item, index) in other_items" :key="index" class="mb-9">
 									<h3 class="d-inline text-right company-title">{{ item.title }}</h3>
@@ -50,7 +74,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -109,5 +133,8 @@ export default {
 	line-height: 7px;
 	text-decoration-line: underline;
 	color: #767676;
+}
+td {
+	padding: 8px;
 }
 </style>
