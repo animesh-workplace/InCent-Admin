@@ -1,9 +1,10 @@
 <template>
 	<div>
-		<v-navigation-drawer clipped fixed app class="elevation-4" color="design" v-model="visible">
+		<v-navigation-drawer clipped fixed app class="elevation-4" color="design" :mini-variant="!visible">
 			<div class="d-flex justify-end">
 				<v-btn icon right color="white" @click="HideNav">
-					<v-icon>mdi-chevron-double-left</v-icon>
+					<v-icon v-if="visible">mdi-chevron-double-left</v-icon>
+					<v-icon v-else>mdi-chevron-double-right</v-icon>
 				</v-btn>
 			</div>
 
@@ -19,7 +20,7 @@
 			</v-list>
 		</v-navigation-drawer>
 
-		<v-btn icon right color="design" class="is-fixed" @click="HideNav">
+		<v-btn icon right color="design" class="is-fixed">
 			<v-icon>mdi-chevron-double-right</v-icon>
 		</v-btn>
 	</div>
