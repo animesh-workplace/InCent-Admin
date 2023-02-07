@@ -1,7 +1,7 @@
 <template>
 	<v-app>
 		<CommonSideBar v-model="navbar_visbile" />
-		<CommonHeader v-model="navbar_visbile" />
+		<!-- <CommonHeader v-model="navbar_visbile" /> -->
 		<v-main>
 			<Nuxt />
 		</v-main>
