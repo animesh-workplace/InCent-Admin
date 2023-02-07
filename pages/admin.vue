@@ -15,7 +15,17 @@
 			</div>
 
 			<div class="mt-8">
-				<h4 class="grey--text font-weight-regular pl-10">4 Users added</h4>
+				<div class="d-flex justify-space-between align-center px-10">
+					<div>
+						<h4 class="grey--text font-weight-regular">4 Users added</h4>
+					</div>
+					<div>
+						<v-btn outlined color="grey" class="px-2">
+							<span class="button_text mr-2">sort on values</span>
+							<img width="16" alt="Sort" src="@/assets/sort_icon.png" />
+						</v-btn>
+					</div>
+				</div>
 
 				<v-simple-table class="mx-6 my-4 rounded-lg elevation-2">
 					<template v-slot:default>
@@ -179,5 +189,15 @@ export default {
 .high-margin {
 	margin-left: 84px;
 	margin-right: 84px;
+}
+.button_text {
+	color: #929292;
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 12px;
+	font-style: normal;
+	text-align: center;
+	text-transform: lowercase;
+	letter-spacing: 1px;
 }
 </style>
