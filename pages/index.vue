@@ -10,6 +10,7 @@
 					<v-text-field
 						outlined
 						class="mt-2"
+						@input="FixingInput"
 						v-model="payload.user_id"
 						:rules="[rules.required, rules.phoneemail]"
 						placeholder="Enter your own Mobile No./ Email"
@@ -58,12 +59,21 @@ export default {
 	}),
 	layout: 'login',
 	components: {},
-	methods: {},
+	methods: {
+		// This function handles the input and checks whether the input is digit or not and then adds or removes +91
+		FixingInput(event) {
+			if (/^\d+$/.test(event)) {
+				if (!/^\+91/.test(event)) {
+					this.payload.user_id = `+91${event}`
+				}
+			} else {
+				this.payload.user_id = event.replace('+91', '')
+			}
+		},
+	},
 	beforeMount() {},
 	mounted() {
-		this.$nextTick(() => {
-			// this.$auth.loginWith('http://15.206.222.49:3000/incentUser/loginIncentUser')
-		})
+		this.$nextTick(() => {})
 	},
 }
 </script>
