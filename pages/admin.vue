@@ -1,8 +1,8 @@
 <template>
 	<!-- <v-container class="px-0 px-sm-16"> -->
-	<v-sheet class="py-4 px-8">
+	<v-sheet class="py-9 px-16">
 		<div class="text-left mb-6">
-			<h2 class="text-h5 design--text mb-4">Company Application</h2>
+			<h1 class="font-weight-medium design--text">Company Application</h1>
 			<h3 class="caption">
 				These page can be used by Invecent support team to check company application status
 			</h3>
@@ -187,8 +187,8 @@ export default {
 	border-radius: 46px;
 }
 .high-margin {
-	margin-left: px;
-	margin-right: px;
+	margin-left: 84px;
+	margin-right: 84px;
 }
 .button_text {
 	color: #929292;
