@@ -21,7 +21,18 @@
 					<v-col>
 						<div class="mx-4 text-center">
 							<h3 class="subtitle-2 grey--text">Status</h3>
-							<h3 class="subtitle-1 red--text"><v-icon>mdi-book-cancel</v-icon> Rejected</h3>
+							<div class="d-flex justify-center">
+								<img
+									width="22"
+									height="22"
+									alt="Sucess"
+									class="mr-3"
+									src="@/assets/icon_reject.png"
+								/>
+								<div>
+									<span class="red--text subtitle-1 font-weight-light"> Rejected </span>
+								</div>
+							</div>
 						</div>
 					</v-col>
 					<v-col>
