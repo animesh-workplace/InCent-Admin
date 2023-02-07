@@ -1,5 +1,4 @@
 <template>
-	<!-- <v-container class="px-0 px-sm-16"> -->
 	<v-sheet class="py-9 px-16">
 		<div class="text-left mb-6">
 			<h1 class="font-weight-medium design--text">Company Application</h1>
@@ -14,7 +13,7 @@
 			</v-text-field>
 		</div>
 
-		<div class="mt-8">
+		<div class="mt-8 md-margin">
 			<div class="d-flex justify-space-between align-center px-10">
 				<div>
 					<h4 class="grey--text font-weight-regular">4 Users added</h4>
@@ -27,22 +26,22 @@
 				</div>
 			</div>
 
-			<v-simple-table class="mx-6 my-4 rounded-lg elevation-2">
+			<v-simple-table class="mx-8 my-4 rounded-lg elevation-2">
 				<template v-slot:default>
 					<thead>
 						<tr>
-							<th class="text-left">Sr No.</th>
-							<th class="text-left">Application No.</th>
-							<th class="text-left">Registered Company Name</th>
-							<th class="text-left">Date<br />Time</th>
-							<th class="text-left">Status</th>
-							<th class="text-left">Comment</th>
-							<th class="text-left">Action</th>
+							<th class="text-center">Sr No.</th>
+							<th class="text-center">Application No.</th>
+							<th class="text-center">Registered Company Name</th>
+							<th class="text-center">Date<br />Time</th>
+							<th class="text-center">Status</th>
+							<th class="text-center">Comment</th>
+							<th class="text-center">Action</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr
-							:class="index % 2 ? 'grey lighten-3' : 'white'"
+							:class="index % 2 ? 'grey lighten-3 text-center' : 'white text-center'"
 							v-for="(item, index) in desserts"
 							:key="item.name"
 						>
@@ -55,12 +54,12 @@
 							</td>
 							<td>
 								<div v-if="item.status == 'Approved'">
-									<div class="d-flex">
+									<div class="d-flex align-content-center justify-center">
 										<img
 											width="22"
 											height="22"
 											alt="Sucess"
-											class="mr-3"
+											class="mr-2"
 											src="@/assets/icon_success.png"
 										/>
 										<div>
@@ -71,7 +70,7 @@
 									</div>
 								</div>
 								<div v-if="item.status == 'Pending'">
-									<div class="d-flex">
+									<div class="d-flex align-content-center justify-center">
 										<img
 											width="22"
 											height="22"
@@ -87,7 +86,7 @@
 									</div>
 								</div>
 								<div v-if="item.status == 'Rejected'">
-									<div class="d-flex">
+									<div class="d-flex align-content-center justify-center">
 										<img
 											width="22"
 											height="22"
@@ -111,7 +110,6 @@
 							</td>
 							<td>
 								<v-btn
-									block
 									small
 									color="design"
 									class="text-caption text-capitalize"
@@ -133,7 +131,6 @@
 			</v-simple-table>
 		</div>
 	</v-sheet>
-	<!-- </v-container> -->
 </template>
 
 <script>
@@ -187,8 +184,12 @@ export default {
 	border-radius: 46px;
 }
 .high-margin {
-	margin-left: 84px;
-	margin-right: 84px;
+	margin-left: 200px;
+	margin-right: 200px;
+}
+.md-margin {
+	margin-left: 52px;
+	margin-right: 52px;
 }
 .button_text {
 	color: #929292;
