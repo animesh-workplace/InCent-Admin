@@ -14,8 +14,7 @@ function buildGetRequest(url) {
 function buildGetRequestWithData(url, data) {
 	var headers = {}
 	if (vue.isUserLoggedIn()) {
-		console.log('User LoginIN')
-		headers['authorization'] = 'Basic ' + vue.getToken()
+		headers['authorization'] = 'Bearer ' + vue.getToken()
 	}
 	return axios({
 		url: url,
