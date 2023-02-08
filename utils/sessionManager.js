@@ -6,6 +6,7 @@ class SessionManager {
 		Vue.setToken = this.setToken
 		Vue.getToken = this.getToken
 		Vue.isUserLoggedIn = this.isUserLoggedIn
+
 		// Company related
 		Vue.getRequestedCompany = this.getRequestedCompany
 		Vue.setRequestedCompany = this.setRequestedCompany
@@ -31,8 +32,8 @@ class SessionManager {
 		return localStorage.getItem('token') !== null
 	}
 
-	setRequestedCompany() {
-		localStorage.setItem('user', JSON.stringify(user))
+	setRequestedCompany(company) {
+		localStorage.setItem('company', JSON.stringify(company))
 	}
 
 	getRequestedCompany() {
