@@ -14,26 +14,26 @@
 					<template v-slot:default>
 						<thead>
 							<tr>
-								<th class="text-left">Sr No.</th>
-								<th class="text-left">Name</th>
-								<th class="text-left">Designation</th>
-								<th class="text-left">Mobile no.</th>
-								<th class="text-left">Email ID</th>
-								<th class="text-left">Profile</th>
+								<th class="text-center">Sr No.</th>
+								<th class="text-center">Name</th>
+								<th class="text-center">Designation</th>
+								<th class="text-center">Mobile no.</th>
+								<th class="text-center">Email ID</th>
+								<th class="text-center">Profile</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr
 								:key="index"
-								v-for="(item, index) in items"
+								v-for="(item, index) in users"
 								:class="index % 2 ? 'grey lighten-3' : 'white'"
 							>
-								<td>{{ index + 1 }}</td>
-								<td>{{ item.name }}</td>
-								<td>{{ item.designation }}</td>
-								<td>{{ item.mobile }}</td>
-								<td>{{ item.email }}</td>
-								<td>{{ item.profile }}</td>
+								<td class="text-center">{{ index + 1 }}</td>
+								<td class="text-center">{{ item.name }}</td>
+								<td class="text-center">{{ item.designation }}</td>
+								<td class="text-center">{{ item.mobile_no }}</td>
+								<td class="text-center">{{ item.email_id }}</td>
+								<td class="text-center">{{ item.profile }}</td>
 							</tr>
 						</tbody>
 					</template>
@@ -77,11 +77,7 @@ export default {
 			},
 		],
 	}),
-	components: {},
-	methods: {},
-	mounted() {
-		this.$nextTick(() => {})
-	},
+	props: { users: { type: Object, required: true } },
 }
 </script>
 
