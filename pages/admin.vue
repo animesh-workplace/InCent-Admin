@@ -53,7 +53,7 @@
 								{{ $dayjs(item.createdAt).format('hh:mm a') }}
 							</td>
 							<td>
-								<div v-if="item.status == 'Approved'">
+								<div v-if="item.status == 'APPROVED'">
 									<div class="d-flex align-content-center justify-center">
 										<img
 											width="22"
@@ -69,7 +69,7 @@
 										</div>
 									</div>
 								</div>
-								<div v-if="item.status == 'Pending'">
+								<div v-if="item.status == 'PENDING'">
 									<div class="d-flex align-content-center justify-center">
 										<img
 											width="22"
@@ -85,7 +85,7 @@
 										</div>
 									</div>
 								</div>
-								<div v-if="item.status == 'Rejected'">
+								<div v-if="item.status == 'REJECTED'">
 									<div class="d-flex align-content-center justify-center">
 										<img
 											width="22"
@@ -113,7 +113,7 @@
 									small
 									color="design"
 									class="text-caption text-capitalize"
-									@click="ChangePage(item.application_no)"
+									@click="ChangePage(item)"
 								>
 									<span class="mr-2 white--text">View Application</span>
 									<img
