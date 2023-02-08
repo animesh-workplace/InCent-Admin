@@ -144,8 +144,8 @@ export default {
 	components: {},
 	methods: {
 		ChangePage(item) {
-			this.$router.push(`/company/${item.application_no}`)
 			company.default.setRequestedCompany(item)
+			this.$router.push(`/company/${item.application_no}`)
 		},
 		async GetCompany() {
 			try {
