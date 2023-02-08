@@ -79,14 +79,6 @@ export default {
 		],
 	}),
 	props: { info: { type: Object, required: true } },
-	methods: {
-		// GotoLink(link) {
-		// 	this.$router.push()
-		// }
-	},
-	mounted() {
-		this.$nextTick(() => {})
-	},
 }
 </script>
 
