@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="text-center">
-			<h2 class="text-h5">Application No. 111113</h2>
+			<h2 class="text-h5">Application No. {{ info.application_no }}</h2>
 		</div>
 		<v-sheet class="grey lighten-3 mt-6 py-5">
 			<v-container>
