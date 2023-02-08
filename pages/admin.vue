@@ -42,15 +42,15 @@
 					<tbody>
 						<tr
 							:class="index % 2 ? 'grey lighten-3 text-center' : 'white text-center'"
-							v-for="(item, index) in desserts"
+							v-for="(item, index) in company_details"
 							:key="item.name"
 						>
 							<td>{{ index + 1 }}</td>
-							<td>{{ item.app_no }}</td>
-							<td>{{ item.company }}</td>
+							<td>{{ item.application_no }}</td>
+							<td>{{ item.company_name }}</td>
 							<td>
-								{{ item.date }} <br />
-								{{ item.time }}
+								{{ $dayjs(item.createdAt).format('DD/MM/YY') }} <br />
+								{{ $dayjs(item.createdAt).format('hh:mm a') }}
 							</td>
 							<td>
 								<div v-if="item.status == 'Approved'">
@@ -113,7 +113,7 @@
 									small
 									color="design"
 									class="text-caption text-capitalize"
-									@click="ChangePage(item.link)"
+									@click="ChangePage(item.application_no)"
 								>
 									<span class="mr-2 white--text">View Application</span>
 									<img
@@ -134,47 +134,31 @@
 </template>
 
 <script>
+import * as company from '@/utils/api/RequestCompanyAPI'
+
 export default {
 	data: () => ({
-		desserts: [
-			{
-				app_no: '1111111',
-				company: 'Procter & Gamble',
-				date: '16/2/23',
-				time: '4:14am',
-				status: 'Approved',
-				comment: '',
-				link: '',
-			},
-			{
-				app_no: '1111111',
-				company: 'Procter & Gamble',
-				date: '16/2/23',
-				time: '4:14am',
-				status: 'Pending',
-				comment: '',
-				link: '',
-			},
-			{
-				app_no: '1111111',
-				company: 'Procter & Gamble',
-				date: '16/2/23',
-				time: '4:14am',
-				status: 'Rejected',
-				comment: '',
-				link: '',
-			},
-		],
+		company_details: [],
 	}),
 	layout: 'admin',
 	components: {},
 	methods: {
 		ChangePage(link) {
-			this.$router.push('/company/a')
+			this.$router.push(`/company/${link}`)
+		},
+		async GetCompany() {
+			try {
+				const response = await company.default.get({ status: 'ALL' })
+				this.company_details = response.data.payload.map((d) => d.request_company)
+			} catch (err) {
+				console.log(err)
+			}
 		},
 	},
 	mounted() {
-		this.$nextTick(() => {})
+		this.$nextTick(() => {
+			this.GetCompany()
+		})
 	},
 }
 </script>
