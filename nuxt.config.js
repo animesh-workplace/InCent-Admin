@@ -3,7 +3,7 @@ import colors from 'vuetify/es5/util/colors'
 export default {
 	ssr: true,
 	head: {
-		title: 'UniteCloud_Tasks',
+		title: 'InCent Admin',
 		htmlAttrs: {
 			lang: 'en',
 		},
