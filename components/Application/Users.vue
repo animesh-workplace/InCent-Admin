@@ -45,39 +45,8 @@
 
 <script>
 export default {
-	data: () => ({
-		items: [
-			{
-				name: 'Vedant Parte',
-				designation: 'IT',
-				mobile: '7458963254',
-				email: 'vedantaparte77@gmail.com',
-				profile: 'seller',
-			},
-			{
-				name: 'Vedant Parte',
-				designation: 'IT',
-				mobile: '7458963254',
-				email: 'vedantaparte77@gmail.com',
-				profile: 'seller',
-			},
-			{
-				name: 'Vedant Parte',
-				designation: 'IT',
-				mobile: '7458963254',
-				email: 'vedantaparte77@gmail.com',
-				profile: 'seller',
-			},
-			{
-				name: 'Vedant Parte',
-				designation: 'IT',
-				mobile: '7458963254',
-				email: 'vedantaparte77@gmail.com',
-				profile: 'seller',
-			},
-		],
-	}),
-	props: { users: { type: Object, required: true } },
+	data: () => ({}),
+	props: { users: { type: Array, required: true } },
 }
 </script>
 
