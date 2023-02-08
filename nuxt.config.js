@@ -18,9 +18,9 @@ export default {
 	css: ['static/css/styles.css'],
 	plugins: [],
 	components: true,
-	modules: ['@nuxtjs/axios'],
 	buildModules: ['@nuxtjs/vuetify'],
 	axios: { baseURL: process.env.BASE_URL },
+	modules: ['@nuxtjs/axios', '@nuxtjs/dayjs'],
 	vuetify: {
 		customVariables: ['~/assets/variables.scss'],
 		theme: {
