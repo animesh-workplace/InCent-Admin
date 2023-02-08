@@ -9,6 +9,16 @@ function get(data) {
 	return APIBuilder.buildGetRequestWithData(URLConstant.default.COMPANYLIST, data)
 }
 
+function setRequestedCompany(company) {
+	vue.setRequestedCompany(company)
+}
+
+function getRequestedCompany() {
+	return vue.getRequestedCompany()
+}
+
 export default {
 	get,
+	getRequestedCompany,
+	setRequestedCompany,
 }
