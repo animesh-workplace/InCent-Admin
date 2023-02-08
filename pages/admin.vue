@@ -139,18 +139,21 @@ import * as company from '@/utils/api/RequestCompanyAPI'
 export default {
 	data: () => ({
 		company_details: [],
+		company_users: [],
 	}),
 	layout: 'admin',
 	components: {},
 	methods: {
-		ChangePage(item) {
+		ChangePage(item, index) {
 			company.default.setRequestedCompany(item)
+			company.default.setRequestedCompanyUsers(this.company_users[index])
 			this.$router.push(`/company/${item.application_no}`)
 		},
 		async GetCompany() {
 			try {
 				const response = await company.default.get({ status: 'ALL' })
 				this.company_details = response.data.payload.map((d) => d.request_company)
+				this.company_users = response.data.payload.map((d) => d.request_company_user_list)
 			} catch (err) {
 				console.log(err)
 			}
