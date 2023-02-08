@@ -11,6 +11,7 @@
 <script>
 export default {
 	data: () => ({}),
+	layout: 'admin',
 	components: {},
 	methods: {},
 	mounted() {
