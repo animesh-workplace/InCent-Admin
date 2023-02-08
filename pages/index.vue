@@ -10,7 +10,6 @@
 					<v-text-field
 						outlined
 						class="mt-2"
-						@input="FixingInput"
 						v-model="payload.user_id"
 						:rules="[rules.required, rules.phoneemail]"
 						placeholder="Enter your own Mobile No./ Email"
