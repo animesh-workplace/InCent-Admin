@@ -20,13 +20,16 @@
 						password
 						class="mt-2"
 						:rules="[rules.required]"
+						v-model="payload.password"
 						placeholder="Enter your Password"
 						:type="show_password ? 'text' : 'password'"
 						@click:append="show_password = !show_password"
 						:append-icon="show_password ? 'mdi-eye' : 'mdi-eye-off'"
 					/>
 					<div class="center text-center">
-						<v-btn rounded block color="design" dark x-large class="mt-4"> Login </v-btn>
+						<v-btn rounded block color="design" dark x-large class="mt-4" @click="Login">
+							Login
+						</v-btn>
 					</div>
 				</v-container>
 			</v-col>
@@ -35,6 +38,8 @@
 </template>
 
 <script>
+import * as login from '@/utils/api/LoginAPI'
+
 export default {
 	data: () => ({
 		payload: {
@@ -43,14 +48,14 @@ export default {
 		},
 		show_password: false,
 		rules: {
-			required: (value) => !!value || 'Required.',
+			required: (value) => !!value || 'This field is required',
 			phoneemail: (input) => {
-				if (/^\+\d+$/.test(input)) {
-					return input.length >= 13 || 'Min 10 characters'
+				if (/^\d+$/.test(input)) {
+					return input.length >= 10 || 'Min 10 characters'
 				} else {
 					return (
 						/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(input) ||
-						'Please enter correct mail'
+						'Please enter correct email'
 					)
 				}
 			},
