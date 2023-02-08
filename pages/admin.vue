@@ -113,7 +113,7 @@
 									small
 									color="design"
 									class="text-caption text-capitalize"
-									@click="ChangePage(item)"
+									@click="ChangePage(item, index)"
 								>
 									<span class="mr-2 white--text">View Application</span>
 									<img
