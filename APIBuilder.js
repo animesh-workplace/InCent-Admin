@@ -1,4 +1,4 @@
-import Vue from '../sessionManager'
+// import Vue from '../sessionManager'
 import axios from 'axios'
 
 const vue = new Vue()
