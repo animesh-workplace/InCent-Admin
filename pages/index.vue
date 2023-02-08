@@ -65,13 +65,23 @@ export default {
 	components: {},
 	methods: {
 		// This function handles the input and checks whether the input is digit or not and then adds or removes +91
-		FixingInput(event) {
-			if (/^\d+$/.test(event)) {
-				if (!/^\+91/.test(event)) {
-					this.payload.user_id = `+91${event}`
-				}
-			} else {
-				this.payload.user_id = event.replace('+91', '')
+		// FixingInput(event) {
+		// 	if (/^\d+$/.test(event)) {
+		// 		if (!/^\+91/.test(event)) {
+		// 			this.payload.user_id = `+91${event}`
+		// 		}
+		// 	} else {
+		// 		this.payload.user_id = event.replace('+91', '')
+		// 	}
+		// },
+		async Login() {
+			try {
+				const response = await login.default.add(this.payload)
+				login.default.setTokenSession(response.data.payload.token)
+				login.default.setUserSession(response.data.payload.user)
+				this.$router.push('/admin')
+			} catch (err) {
+				console.log(err)
 			}
 		},
 	},
