@@ -2,7 +2,7 @@
 	<div>
 		<CommonBreadCrumb :application="company_details.application_no" />
 		<ApplicationHeader :info="company_details" />
-		<ApplicationCompany />
+		<ApplicationCompany :info="company_details" />
 		<ApplicationUsers />
 		<ApplicationApproval />
 	</div>
