@@ -19,7 +19,7 @@
 							</div>
 							<div class="mr-5">
 								<div v-for="(item, index) in items" :key="index">
-									<h3 class="text-left company-subtitle mb-6">{{ item.subtitle }}</h3>
+									<h3 class="text-left company-subtitle mb-6">{{ info[item.subtitle] }}</h3>
 								</div>
 							</div>
 						</div>
@@ -33,48 +33,26 @@
 								</td>
 								<td>
 									<h3 class="company-subtitle mr-3">
-										{{ item.subtitle }}
+										{{ info[item.subtitle] }}
 									</h3>
 								</td>
 								<td>
-									<div class="d-flex flex-column justify-center">
+									<a
+										target="_blank"
+										:href="info[item.link]"
+										class="d-flex flex-column justify-center"
+									>
 										<img
 											width="20"
 											alt="Sucess"
 											class="mx-auto mb-2"
 											src="@/assets/pdf_icon.png"
 										/>
-										<span class="company-link"> Company-tan.pdf</span>
-									</div>
+										<span class="company-link">{{ item.file_name }}</span>
+									</a>
 								</td>
 							</tr>
 						</table>
-
-						<!-- 						<div class="d-flex flex-row">
-							<div class="mr-5">
-								<div v-for="(item, index) in other_items" :key="index" class="mb-9">
-									<h3 class="d-inline text-right company-title">{{ item.title }}</h3>
-								</div>
-							</div>
-							<div>
-								<div v-for="(item, index) in other_items" :key="index" class="mb-6">
-									<div class="d-flex">
-										<h3 class="d-inline text-left company-subtitle mr-3">
-											{{ item.subtitle }}
-										</h3>
-										<div class="d-flex flex-column justify-center">
-											<img
-												width="20"
-												alt="Sucess"
-												class="mx-auto mb-2"
-												src="@/assets/pdf_icon.png"
-											/>
-											<span class="company-link"> Company-tan.pdf</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div> -->
 					</div>
 				</div>
 			</div>
@@ -86,22 +64,26 @@
 export default {
 	data: () => ({
 		items: [
-			{ title: 'Registered Company Name', subtitle: 'Procter & Gamble Pvt. Ltd.' },
-			{ title: 'Your Name', subtitle: 'Vedant Parte' },
-			{ title: 'Website URL', subtitle: 'www.proctergamble.com' },
-			{ title: 'Your Email ID', subtitle: 'proctergamble@email.com' },
-			{ title: 'Your Mobile number', subtitle: '7854126365' },
-			{ title: 'Billing Address', subtitle: 'block no. 21, sapatarshi building, vashi(w)' },
+			{ title: 'Registered Company Name', subtitle: 'company_name' },
+			{ title: 'Your Name', subtitle: 'your_name' },
+			{ title: 'Website URL', subtitle: 'website_url' },
+			{ title: 'Your Email ID', subtitle: 'your_email_id' },
+			{ title: 'Your Mobile number', subtitle: 'your_mobile_no' },
+			{ title: 'Billing Address', subtitle: 'billing_address' },
 		],
 		other_items: [
-			{ title: 'TAN No.', subtitle: '5425623500125' },
-			{ title: 'PAN No.', subtitle: '800210254552355' },
-			{ title: 'CIN No.', subtitle: '754823651254' },
-			{ title: 'GST No.', subtitle: '214522254001884' },
+			{ title: 'TAN No.', subtitle: 'tan_no', link: 'tan_document', file_name: 'Company-tan.pdf' },
+			{ title: 'PAN No.', subtitle: 'pan_no', link: 'pan_document', file_name: 'Company-pan.pdf' },
+			{ title: 'CIN No.', subtitle: 'cin_no', link: 'cin_document', file_name: 'Company-cin.pdf' },
+			{ title: 'GST No.', subtitle: 'gst_no', link: 'gst_document', file_name: 'Company-gst.pdf' },
 		],
 	}),
-	components: {},
-	methods: {},
+	props: { info: { type: Object, required: true } },
+	methods: {
+		// GotoLink(link) {
+		// 	this.$router.push()
+		// }
+	},
 	mounted() {
 		this.$nextTick(() => {})
 	},
