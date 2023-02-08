@@ -143,8 +143,9 @@ export default {
 	layout: 'admin',
 	components: {},
 	methods: {
-		ChangePage(link) {
-			this.$router.push(`/company/${link}`)
+		ChangePage(item) {
+			this.$router.push(`/company/${item.application_no}`)
+			company.default.setRequestedCompany(item)
 		},
 		async GetCompany() {
 			try {
