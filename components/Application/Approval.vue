@@ -19,7 +19,7 @@
 					<v-card-actions>
 						<div class="mx-auto">
 							<v-btn class="mr-3" color="grey" outlined @click="dialog1 = false">Cancel</v-btn>
-							<v-btn class="mr-3" color="success" @click="dialog1 = false">Approve</v-btn>
+							<v-btn class="mr-3" color="success" @click="CompanyStatus('Approve')">Approve</v-btn>
 						</div>
 					</v-card-actions>
 				</v-card>
@@ -44,7 +44,7 @@
 					<v-card-actions>
 						<div class="mx-auto">
 							<v-btn class="mr-3" color="grey" outlined @click="dialog2 = false">Cancel</v-btn>
-							<v-btn class="mr-3" color="error" @click="dialog2 = false">Reject</v-btn>
+							<v-btn class="mr-3" color="error" @click="CompanyStatus('Reject')">Reject</v-btn>
 						</div>
 					</v-card-actions>
 				</v-card>
@@ -54,16 +54,39 @@
 </template>
 
 <script>
+import * as company from '@/utils/api/RequestCompanyAPI'
+
 export default {
 	data: () => ({
 		dialog1: false,
 		dialog2: false,
 		comment: '',
 	}),
-	components: {},
-	methods: {},
-	mounted() {
-		this.$nextTick(() => {})
+	props: { companyid: { required: true, type: String } },
+	methods: {
+		async CompanyStatus(status) {
+			if (status == 'Approve') {
+				try {
+					const response = await company.default.update({
+						request_company_id: this.companyid,
+						status: 'APPROVED',
+					})
+					this.dialog1 = false
+				} catch (err) {
+					console.log(err)
+				}
+			} else if (status == 'Reject') {
+				try {
+					const response = await company.default.update({
+						request_company_id: this.companyid,
+						status: 'REJECTED',
+					})
+					this.dialog2 = false
+				} catch (err) {
+					console.log(err)
+				}
+			}
+		},
 	},
 }
 </script>
