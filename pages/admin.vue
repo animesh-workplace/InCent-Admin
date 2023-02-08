@@ -166,6 +166,7 @@ export default {
 			},
 		],
 	}),
+	layout: 'admin',
 	components: {},
 	methods: {
 		ChangePage(link) {
@@ -180,8 +181,8 @@ export default {
 
 <style scoped>
 .search {
-	border: 1px solid #9a9a9a;
 	border-radius: 46px;
+	border: 1px solid #9a9a9a;
 }
 .high-margin {
 	margin-left: 200px;
@@ -198,7 +199,7 @@ export default {
 	line-height: 12px;
 	font-style: normal;
 	text-align: center;
-	text-transform: lowercase;
 	letter-spacing: 1px;
+	text-transform: lowercase;
 }
 </style>
