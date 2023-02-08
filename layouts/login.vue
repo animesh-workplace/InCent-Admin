@@ -4,20 +4,11 @@
 		<Nuxt />
 		<CommonFooter />
 	</v-app>
-	<!-- 	<v-app>
-		<v-navigation-drawer v-model="drawer" app>
-		</v-navigation-drawer>
-		<v-toolbar fixed class="transparent">
-			<v-btn icon @click.stop="drawer = !drawer">
-				<v-icon>
-					{{ drawer ? 'mdi-chevron-right' : 'mdi-chevron-left' }}
-				</v-icon>
-			</v-btn>
-		</v-toolbar>
-	</v-app> -->
 </template>
 
 <script>
+import * as login from '@/utils/api/LoginAPI'
+
 export default {
 	data: () => ({
 		drawer: true,
@@ -25,7 +16,11 @@ export default {
 	components: {},
 	methods: {},
 	mounted() {
-		this.$nextTick(() => {})
+		this.$nextTick(() => {
+			if (login.default.isUserLoggedIn()) {
+				this.$router.push('/admin')
+			}
+		})
 	},
 }
 </script>
