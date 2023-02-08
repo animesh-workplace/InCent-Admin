@@ -9,19 +9,19 @@
 					<v-col>
 						<div class="mx-4 text-center">
 							<h3 class="subtitle-2 grey--text">Time</h3>
-							<h3 class="subtitle-1">4:14 am</h3>
+							<h3 class="subtitle-1">{{ $dayjs(info.updatedAt).format('hh:mm a') }}</h3>
 						</div>
 					</v-col>
 					<v-col>
 						<div class="mx-4 text-center">
 							<h3 class="subtitle-2 grey--text">Date</h3>
-							<h3 class="subtitle-1">16/2/23</h3>
+							<h3 class="subtitle-1">{{ $dayjs(info.updatedAt).format('DD/MM/YY') }}</h3>
 						</div>
 					</v-col>
 					<v-col>
 						<div class="mx-4 text-center">
 							<h3 class="subtitle-2 grey--text">Status</h3>
-							<div class="d-flex justify-center">
+							<!-- 							<div class="d-flex justify-center">
 								<img
 									width="22"
 									height="22"
@@ -31,6 +31,55 @@
 								/>
 								<div>
 									<span class="red--text subtitle-1 font-weight-light"> Rejected </span>
+								</div>
+							</div> -->
+
+							<div v-if="info.status == 'APPROVED'">
+								<div class="d-flex align-content-center justify-center">
+									<img
+										width="22"
+										height="22"
+										alt="Sucess"
+										class="mr-2"
+										src="@/assets/icon_success.png"
+									/>
+									<div>
+										<span class="success--text subtitle-1 font-weight-light">
+											{{ info.status }}
+										</span>
+									</div>
+								</div>
+							</div>
+							<div v-if="info.status == 'PENDING'">
+								<div class="d-flex align-content-center justify-center">
+									<img
+										width="22"
+										height="22"
+										alt="Sucess"
+										class="mr-3"
+										src="@/assets/icon_pending.png"
+									/>
+									<div>
+										<span class="grey--text subtitle-1 font-weight-light">
+											{{ info.status }}
+										</span>
+									</div>
+								</div>
+							</div>
+							<div v-if="info.status == 'REJECTED'">
+								<div class="d-flex align-content-center justify-center">
+									<img
+										width="22"
+										height="22"
+										alt="Sucess"
+										class="mr-3"
+										src="@/assets/icon_reject.png"
+									/>
+									<div>
+										<span class="error--text subtitle-1 font-weight-light">
+											{{ info.status }}
+										</span>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -56,6 +105,7 @@
 <script>
 export default {
 	data: () => ({}),
+	props: { info: { type: Object, required: true } },
 	components: {},
 	methods: {},
 	mounted() {
