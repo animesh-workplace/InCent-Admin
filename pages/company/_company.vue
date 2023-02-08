@@ -4,7 +4,7 @@
 		<ApplicationHeader :info="company_details" />
 		<ApplicationCompany :info="company_details" />
 		<ApplicationUsers :users="company_user_details" />
-		<ApplicationApproval />
+		<ApplicationApproval :companyid="company_details._id" />
 	</div>
 </template>
 
