@@ -9,6 +9,11 @@ function get(data) {
 	return APIBuilder.buildGetRequestWithData(URLConstant.default.COMPANYLIST, data)
 }
 
+// Update approval status of the company listed
+function update(data) {
+	return APIBuilder.buildGetRequestWithData(URLConstant.default.COMPANYLISTAPPROVAL, data)
+}
+
 function setRequestedCompany(company) {
 	vue.setRequestedCompany(company)
 }
@@ -17,8 +22,18 @@ function getRequestedCompany() {
 	return vue.getRequestedCompany()
 }
 
+function setRequestedCompanyUsers(users) {
+	vue.setRequestedCompanyUsers(users)
+}
+
+function getRequestedCompanyUsers() {
+	return vue.getRequestedCompanyUsers()
+}
+
 export default {
 	get,
 	getRequestedCompany,
 	setRequestedCompany,
+	getRequestedCompanyUsers,
+	setRequestedCompanyUsers,
 }
