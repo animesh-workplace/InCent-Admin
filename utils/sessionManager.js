@@ -1,10 +1,14 @@
 class SessionManager {
 	install(vue, options) {
+		// Authetication related
 		Vue.setUser = this.setUser
 		Vue.getUser = this.getUser
 		Vue.setToken = this.setToken
 		Vue.getToken = this.getToken
 		Vue.isUserLoggedIn = this.isUserLoggedIn
+		// Company related
+		Vue.getRequestedCompany = this.getRequestedCompany
+		Vue.setRequestedCompany = this.setRequestedCompany
 	}
 
 	setUser(user) {
@@ -25,6 +29,14 @@ class SessionManager {
 
 	isUserLoggedIn() {
 		return localStorage.getItem('token') !== null
+	}
+
+	setRequestedCompany() {
+		localStorage.setItem('user', JSON.stringify(user))
+	}
+
+	getRequestedCompany() {
+		return JSON.parse(localStorage.getItem('company'))
 	}
 }
 
