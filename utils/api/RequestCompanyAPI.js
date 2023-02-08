@@ -11,7 +11,7 @@ function get(data) {
 
 // Update approval status of the company listed
 function update(data) {
-	return APIBuilder.buildGetRequestWithData(URLConstant.default.COMPANYLISTAPPROVAL, data)
+	return APIBuilder.buildPutRequestWithData(URLConstant.default.COMPANYLISTAPPROVAL, data)
 }
 
 function setRequestedCompany(company) {
@@ -32,6 +32,7 @@ function getRequestedCompanyUsers() {
 
 export default {
 	get,
+	update,
 	getRequestedCompany,
 	setRequestedCompany,
 	getRequestedCompanyUsers,
