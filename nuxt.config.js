@@ -18,9 +18,9 @@ export default {
 	css: ['static/css/styles.css'],
 	plugins: [],
 	components: true,
+	modules: ['@nuxtjs/axios'],
 	buildModules: ['@nuxtjs/vuetify'],
-	modules: ['@nuxtjs/axios', '@nuxtjs/auth-next'],
-	axios: { baseURL: '/' },
+	axios: { baseURL: process.env.BASE_URL },
 	vuetify: {
 		customVariables: ['~/assets/variables.scss'],
 		theme: {
@@ -40,29 +40,4 @@ export default {
 		},
 	},
 	build: {},
-	auth: {
-		localStorage: false,
-		cookie: {
-			options: {
-				expires: 7,
-			},
-		},
-		strategies: {
-			local: {
-				endpoints: {
-					user: false,
-					logout: false,
-					login: { url: '/', method: 'post', propertyName: 'token' },
-				},
-				tokenType: 'Bearer',
-				tokenRequired: true,
-			},
-		},
-		redirect: {
-			home: '/',
-			callback: false,
-			// login: '/',
-			// logout: '/',
-		},
-	},
 }
