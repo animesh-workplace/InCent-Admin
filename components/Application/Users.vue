@@ -8,7 +8,7 @@
 				</div>
 			</div>
 			<div class="mt-8">
-				<h4 class="grey--text font-weight-regular pl-10">4 Users added</h4>
+				<h4 class="grey--text font-weight-regular pl-10">{{ users.length }} Users added</h4>
 
 				<v-simple-table class="mx-6 my-4 rounded-lg elevation-2">
 					<template v-slot:default>

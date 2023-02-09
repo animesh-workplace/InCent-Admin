@@ -16,7 +16,7 @@
 		<div class="mt-8 md-margin">
 			<div class="d-flex justify-space-between align-center px-10">
 				<div>
-					<h4 class="grey--text font-weight-regular">4 Users added</h4>
+					<h4 class="grey--text font-weight-regular">{{ company_details.length }} Users added</h4>
 				</div>
 				<div>
 					<v-btn outlined color="grey" class="px-2">
@@ -76,7 +76,7 @@
 											height="22"
 											alt="Sucess"
 											class="mr-3"
-											src="@/assets/icon_pending.png"
+											src="@/assets/icon_pendincompany_details.lengthg.png"
 										/>
 										<div>
 											<span class="grey--text text-caption font-weight-light">
