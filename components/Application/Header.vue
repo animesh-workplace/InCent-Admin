@@ -87,13 +87,13 @@
 					<v-col>
 						<div class="mx-4 text-center">
 							<h3 class="subtitle-2 grey--text">Attempt</h3>
-							<h3 class="subtitle-1">2<sup>nd</sup> Attempt</h3>
+							<h3 class="subtitle-1">1<sup>st</sup> Attempt</h3>
 						</div>
 					</v-col>
 					<v-col>
 						<div class="mx-4 text-center">
 							<h3 class="subtitle-2 grey--text">Comments (1)</h3>
-							<h3 class="subtitle-1 blue--text">View previous comment</h3>
+							<h3 class="subtitle-1 blue--text">NA</h3>
 						</div>
 					</v-col>
 				</v-row>
