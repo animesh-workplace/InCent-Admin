@@ -33,7 +33,7 @@
 								<td class="text-center">{{ item.designation }}</td>
 								<td class="text-center">{{ item.mobile_no }}</td>
 								<td class="text-center">{{ item.email_id }}</td>
-								<td class="text-center">{{ item.profile }}</td>
+								<td class="text-center">{{ item.role_list }}</td>
 							</tr>
 						</tbody>
 					</template>
