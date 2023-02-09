@@ -76,7 +76,7 @@
 											height="22"
 											alt="Sucess"
 											class="mr-3"
-											src="@/assets/icon_pendincompany_details.lengthg.png"
+											src="@/assets/icon_pending.png"
 										/>
 										<div>
 											<span class="grey--text text-caption font-weight-light">
